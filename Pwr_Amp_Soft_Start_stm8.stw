@@ -1,0 +1,12 @@
+;	STMicroelectronics Workspace file
+
+[Version]
+Keyword=ST7Workspace-V0.7
+
+[Project0]
+Filename=pwr_amp_soft_start_stm8.stp
+Dependencies=
+[Options]
+ActiveProject=pwr_amp_soft_start_stm8
+ActiveConfig=Debug
+AddSortedElements=1
