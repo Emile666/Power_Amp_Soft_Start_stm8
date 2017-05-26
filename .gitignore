@@ -21,6 +21,7 @@ $RECYCLE.BIN/
 *.ls
 *.o
 *.lkf
+TAGS*.txt
 
 # =========================
 # Operating System Files
