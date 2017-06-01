@@ -1,5 +1,5 @@
 
-Map of Debug\pwr_amp_soft_start_stm8.sm8 from link file Debug\pwr_amp_soft_start_stm8.lkf - Thu May 25 15:16:57 2017
+Map of Debug\pwr_amp_soft_start_stm8.sm8 from link file Debug\pwr_amp_soft_start_stm8.lkf - Thu Jun 01 14:08:51 2017
 
 
                                --------
@@ -388,6 +388,7 @@ _TIM2_PSCR                 0000530e   defined in Debug\delay.o
 _TIM2_SR1                  00005304   defined in Debug\delay.o
 _TIM2_SR2                  00005305   defined in Debug\delay.o
 _TIM2_UPD_OVF_IRQHandler   000081c1   defined in Debug\main.o section .text
+                                      used in Debug\stm8_interrupt_vector.o
 _TIM4_ARR                  00005348   defined in Debug\delay.o
 _TIM4_CNTR                 00005346   defined in Debug\delay.o
 _TIM4_CR1                  00005340   defined in Debug\delay.o
