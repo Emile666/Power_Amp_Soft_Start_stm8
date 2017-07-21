@@ -95,28 +95,36 @@ void setup_timer2(void)
 /*-----------------------------------------------------------------------------
   Purpose  : This routine initialises all the GPIO pins of the STM8 uC.
              See stc1000p.h for a detailed description of all pin-functions.
+             AN2854 section 6.1 states that: "All unused port pins should be 
+             configured as output low level. Do not leave any unused I/O pin 
+             configured as a floating input which could lead to useless high 
+             consumption".
   Variables: -
   Returns  : -
   ---------------------------------------------------------------------------*/
 void setup_gpio_ports(void)
 {
 	PA_DDR     |=  (RLY_N | RLY_L_R | RLY_L); // Set as output
-	PA_DDR     &= ~PA_NC;                     // Set unused ports as input
-	PA_CR1     |=  PA_NC;                     // Enable pull-up
+	PA_DDR     |=  PA_NC;                     // Set unused ports as output
+	PA_CR1     |=  PA_NC;                     // Set to Push-Pull
+    PA_ODR     &= ~PA_NC;                     // Set to low-level
     PA_CR1     |=  (RLY_N | RLY_L_R | RLY_L); // Set to Push-Pull
     PA_ODR     &= ~(RLY_N | RLY_L_R | RLY_L); // Disable PORTA outputs
 		
-    PB_DDR     &= ~PB_NC;   // Set unused ports as input
-    PB_CR1     |=  PB_NC;   // Enable pull-up
+    PB_DDR     |=  PB_NC;   // Set unused ports as output
+    PB_CR1     |=  PB_NC;   // Set to Push-Pull
+    PB_ODR     &= ~PB_NC;   // Set to low-level
 		
-    PC_DDR     |=  PWR_LED; // Set as outputs
-	PC_CR1     |=  PWR_LED; // Set to Push-Pull
-    PC_ODR     &= ~PWR_LED; // Disable PWR_LED
-    PC_DDR     &= ~PWR_SW;  // set as Input
-	PC_CR1     |=  PWR_SW;  // Enable pull-up
+    PC_DDR     |=  PWR_LED | RLY_LS; // Set as outputs
+	PC_CR1     |=  PWR_LED | RLY_LS; // Set to Push-Pull
+    PC_ODR     &= ~PWR_LED;          // Disable PWR_LED and speaker relay
+    PC_ODR     |=  RLY_LS;           // Disable Speaker relay (active-low)
+    PC_DDR     &= ~PWR_SW;           // set as Input
+	PC_CR1     |=  PWR_SW;           // Enable pull-up
 		
-    PD_DDR     &= ~PD_NC;   // Set unused ports as input
-    PD_CR1     |=  PD_NC;   // Enable pull-up
+    PD_DDR     |=  PD_NC;   // Set unused ports as output
+    PD_CR1     |=  PD_NC;   // Set to Push-Pull
+    PD_ODR     &= ~PD_NC;   // Set to low-level
 } // setup_output_ports()
 
 /*-----------------------------------------------------------------------------
@@ -137,6 +145,26 @@ uint8_t read_power_switch(void)
 } // read_power_switch()
 
 /*-----------------------------------------------------------------------------
+  Purpose  : This function blinks the LED from the Power-switch. It is called
+             every 100 msec.
+  Variables: led_on (global)
+  Returns  : -
+  ---------------------------------------------------------------------------*/
+void blink_led(void)
+{
+     if (led_on) 
+     {  // blink LED (off)
+        led_on  = 0;
+        PC_ODR &= ~PWR_LED;
+     }
+     else
+     {  // blink LED (on)
+        led_on = 1;
+        PC_ODR |= PWR_LED;
+     } // else
+} // blink_led()
+
+/*-----------------------------------------------------------------------------
   Purpose  : This task is called every 100 msec. and contains the main 
              functionality for this program.
   Variables: -
@@ -148,51 +176,67 @@ void tim_task(void)
     
     switch (std)
     {
-        case STD_PWR_OFF:
+        case STD_PWR_OFF: // Power-Off mode, all relays and LED are off
              PA_ODR &= ~(RLY_N | RLY_L_R | RLY_L); // all relays off
              PC_ODR &= ~PWR_LED;    // power-led off
+             PC_ODR |=  RLY_LS;     // Disable Speaker relay (active-low)
              if (k) std = STD_N_ON; // power switch pressed
              break;
-        case STD_N_ON:
+        case STD_N_ON: // Enable Relay for Neutral wire
              PA_ODR |= RLY_N;    // Relay N on
-             std     = STD_L_R_ON;
-             tmr     = 0;        // reset counter
-             led_on  = 1;
              PC_ODR |= PWR_LED;  // Set power-led on
+             led_on  = 1;
+             tmr     = 0;        // reset counter
+             std     = STD_L_R_ON;
              break;
-        case STD_L_R_ON:
+        case STD_L_R_ON: // Energize Main Power-Supply through resistors
              PA_ODR |= RLY_L_R;  // Relay L with resistors on
-             if (led_on) 
-             {  // blink LED (off)
-                led_on  = 0;
-                PC_ODR &= ~PWR_LED;
-             }
-             else
-             {  // blink LED (on)
-                led_on = 1;
-                PC_ODR |= PWR_LED;
-             } // else
+             blink_led();
              if (++tmr >= TMR_L_R)
              {
-                std = STD_PWR_ON;
+                tmr = 0; // reset timer 
+                std = STD_SPK_ON;
              } // if
              break;
-        case STD_PWR_ON:
+        case STD_SPK_ON: // Wait for Power-Amp DC voltage to settle
              PA_ODR |= RLY_L;    // Relay L on
              delay_msec(5);      // Short delay
              PA_ODR &= ~RLY_L_R; // disable Relay L with resistors
+             blink_led();
+             if (++tmr >= TMR_SPK_ON)
+             {
+                tmr = 0; // reset timer 
+                std = STD_PWR_ON;
+             } // if
+             break;
+        case STD_PWR_ON: // Normal Power-On state
              PC_ODR |=  PWR_LED; // Power-LED is ON
+             PC_ODR &= ~RLY_LS;  // Enable relay for Speaker (active-low)
              if (k) std = STD_PWR_OFF1; // power-switch pressed
              break;
-        case STD_PWR_OFF1:
+        case STD_PWR_OFF1: // Disable Speaker Relay (should be done first)
              PC_ODR &= ~PWR_LED; // LED off
-             PA_ODR &= ~RLY_L;   // Relay L off
+             PC_ODR |=  RLY_LS;  // Disable Speaker relay (active-low)
              std = STD_PWR_OFF2;
              break;
-        case STD_PWR_OFF2:
+        case STD_PWR_OFF2: // Disable live wire
              PC_ODR |=  PWR_LED; // LED on
+             PA_ODR &= ~RLY_L;   // Relay L off
+             std = STD_PWR_OFF3;
+             break;
+        case STD_PWR_OFF3: // Disable neutral wire
+             PC_ODR &= ~PWR_LED; // LED off
              PA_ODR &= ~RLY_N;   // Relay N off
-             std = STD_PWR_OFF;
+             tmr = 0;
+             std = STD_PWR_OFF4;
+             break;
+        case STD_PWR_OFF4: // Some more fancy blinking
+             blink_led();
+             if (tmr++ >= TMR_OFF)
+             {
+                tmr = 0; // reset timer 
+                std = STD_PWR_OFF;
+             } // if
              break;
         default:
              std = STD_PWR_OFF;

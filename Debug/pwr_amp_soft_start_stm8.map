@@ -1,5 +1,5 @@
 
-Map of Debug\pwr_amp_soft_start_stm8.sm8 from link file Debug\pwr_amp_soft_start_stm8.lkf - Thu Jun 01 14:08:51 2017
+Map of Debug\pwr_amp_soft_start_stm8.sm8 from link file Debug\pwr_amp_soft_start_stm8.lkf - Fri Jun 02 11:59:31 2017
 
 
                                --------
@@ -7,7 +7,7 @@ Map of Debug\pwr_amp_soft_start_stm8.sm8 from link file Debug\pwr_amp_soft_start
                                --------
 
 start 00008080 end 00008084 length     4 segment .const
-start 00008094 end 00008696 length  1538 segment .text
+start 00008094 end 0000871a length  1670 segment .text
 start 00004000 end 00004000 length     0 segment .eeprom
 start 00000000 end 00000008 length     8 segment .bsct, initialized
 start 0000808c end 00008094 length     8 segment .bsct, from
@@ -17,7 +17,7 @@ start 0000007d end 0000007d length     0 segment .share
 start 00000100 end 00000100 length     0 segment .data
 start 00000100 end 00000100 length     0 segment .bss
 start 00000000 end 00000471 length  1137 segment .info.
-start 00000000 end 00003aaa length 15018 segment .debug
+start 00000000 end 00003ae5 length 15077 segment .debug
 start 00008000 end 00008080 length   128 segment .const
 start 00008084 end 0000808c length     8 segment .init
 
@@ -39,34 +39,34 @@ start 00000000 end 000019bf length  6591 section .debug
 start 0000002f end 00000099 length   106 section .info.
 
 Debug\main.o:
-start 000081c1 end 00008384 length   451 section .text
+start 000081c1 end 00008408 length   583 section .text
 start 00000004 end 00000007 length     3 section .bsct
 start 00000008 end 0000000a length     2 section .ubsct
-start 000019bf end 000033c1 length  6658 section .debug
+start 000019bf end 000033fc length  6717 section .debug
 start 00000099 end 00000102 length   105 section .info.
 start 00008080 end 00008084 length     4 section .const
 
 Debug\scheduler.o:
-start 00008384 end 000085e9 length   613 section .text
+start 00008408 end 0000866d length   613 section .text
 start 00000007 end 00000008 length     1 section .bsct
 start 0000000a end 00000073 length   105 section .ubsct
-start 000033c1 end 0000393f length  1406 section .debug
+start 000033fc end 0000397a length  1406 section .debug
 start 00000102 end 00000170 length   110 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libis0.sm8)strcmp0.o:
-start 000085e9 end 000085fc length    19 section .text
+start 0000866d end 00008680 length    19 section .text
 start 00000170 end 0000019e length    46 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libis0.sm8)strncp.o:
-start 000085fc end 00008622 length    38 section .text
+start 00008680 end 000086a6 length    38 section .text
 start 0000019e end 00000212 length   116 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lcmp.o:
-start 00008622 end 00008642 length    32 section .text
+start 000086a6 end 000086c6 length    32 section .text
 start 00000212 end 00000240 length    46 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lgadc.o:
-start 00008642 end 00008652 length    16 section .text
+start 000086c6 end 000086d6 length    16 section .text
 start 00000240 end 0000026f length    47 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lreg.o:
@@ -74,19 +74,19 @@ start 00000073 end 00000077 length     4 section .ubsct
 start 0000026f end 0000029d length    46 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lsub.o:
-start 00008652 end 0000866a length    24 section .text
+start 000086d6 end 000086ee length    24 section .text
 start 0000029d end 000002cb length    46 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)ltor.o:
-start 0000866a end 0000867c length    18 section .text
+start 000086ee end 00008700 length    18 section .text
 start 000002cb end 000002f9 length    46 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)rtol.o:
-start 0000867c end 0000868e length    18 section .text
+start 00008700 end 00008712 length    18 section .text
 start 000002f9 end 00000327 length    46 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)utolx.o:
-start 0000868e end 00008695 length     7 section .text
+start 00008712 end 00008719 length     7 section .text
 start 00000327 end 00000356 length    47 section .info.
 
 (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)xreg.o:
@@ -98,8 +98,8 @@ start 0000007a end 0000007d length     3 section .ubsct
 start 00000384 end 000003b2 length    46 section .info.
 
 Debug\stm8_interrupt_vector.o:
-start 00008695 end 00008696 length     1 section .text
-start 0000393f end 00003aaa length   363 section .debug
+start 00008719 end 0000871a length     1 section .text
+start 0000397a end 00003ae5 length   363 section .debug
 start 000003b2 end 0000042c length   122 section .info.
 start 00008000 end 00008080 length   128 section .const
 
@@ -116,6 +116,7 @@ _tmr2_val                      6   (6)
 
 Debug\main.o:
 _TIM2_UPD_OVF_IRQHandler  >   14   (11)
+_blink_led                     2   (2)
 _initialise_system_clock       2   (2)
 _main                     >   33   (2)
 _read_power_switch             2   (2)
@@ -178,34 +179,37 @@ Stack size: 47
 
   22   _add_task --> 11
 
-  23   _delay_msec: (17)
-  24      + _millis: (6)
+  23   _blink_led: (2)
+
+  24   _delay_msec: (17)
+  25      + _millis: (6)
        
-  25   _dispatch_tasks --> 13
+  26   _dispatch_tasks --> 13
 
-  26   _initialise_system_clock --> 15
+  27   _initialise_system_clock --> 15
 
-  27   _millis --> 24
+  28   _millis --> 25
 
-  28   _read_power_switch: (2)
+  29   _read_power_switch: (2)
 
-  29   _scheduler_init --> 16
+  30   _scheduler_init --> 16
 
-  30   _scheduler_isr --> 2
+  31   _scheduler_isr --> 2
 
-  31   _setup_gpio_ports --> 17
+  32   _setup_gpio_ports --> 17
 
-  32   _setup_timer2 --> 18
+  33   _setup_timer2 --> 18
 
-  33   _strcmp --> 7
+  34   _strcmp --> 7
 
-  34   _strncpy --> 12
+  35   _strncpy --> 12
 
-  35   _tim_task: (3)
-  36      + _delay_msec --> 23
-  37      + _read_power_switch --> 28
+  36   _tim_task: (3)
+  37      + _blink_led --> 23
+  38      + _delay_msec --> 24
+  39      + _read_power_switch --> 29
        
-  38   _tmr2_val --> 5
+  40   _tmr2_val --> 5
 
 
 
@@ -424,46 +428,47 @@ __startmem                 00000100   defined in command file section .bss
 __stext                    00008094   defined in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8 section .text
                                       used in Debug\stm8_interrupt_vector.o
 __vectab                   00008000   defined in Debug\stm8_interrupt_vector.o section .const
-_add_task                  00008439   defined in Debug\scheduler.o section .text
+_add_task                  000084bd   defined in Debug\scheduler.o section .text
                                       used in Debug\main.o
+_blink_led                 000082db   defined in Debug\main.o section .text
 _delay_msec                000080fa   defined in Debug\delay.o section .text
                                       used in Debug\main.o
 _delay_usec                0000819c   defined in Debug\delay.o section .text
-_disable_task              00008535   defined in Debug\scheduler.o section .text
-_dispatch_tasks            000083ee   defined in Debug\scheduler.o section .text
+_disable_task              000085b9   defined in Debug\scheduler.o section .text
+_dispatch_tasks            00008472   defined in Debug\scheduler.o section .text
                                       used in Debug\main.o
-_enable_task               000084da   defined in Debug\scheduler.o section .text
+_enable_task               0000855e   defined in Debug\scheduler.o section .text
 _exit                      000080e2   defined in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8 section .text
 _initialise_system_clock   000081ef   defined in Debug\main.o section .text
 _led_on                    00000006   defined in Debug\main.o section .bsct, initialized
-_main                      0000835e   defined in Debug\main.o section .text
+_main                      000083e2   defined in Debug\main.o section .text
                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
 _max_tasks                 00000007   defined in Debug\scheduler.o section .bsct, initialized
 _millis                    000080e4   defined in Debug\delay.o section .text
 _old_pwr_sw                00000008   defined in Debug\main.o section .ubsct
 _pwr_sw                    00000009   defined in Debug\main.o section .ubsct
-_read_power_switch         00008298   defined in Debug\main.o section .text
-_scheduler_init            00008384   defined in Debug\scheduler.o section .text
+_read_power_switch         000082bc   defined in Debug\main.o section .text
+_scheduler_init            00008408   defined in Debug\scheduler.o section .text
                                       used in Debug\main.o
-_scheduler_isr             0000838d   defined in Debug\scheduler.o section .text
+_scheduler_isr             00008411   defined in Debug\scheduler.o section .text
                                       used in Debug\main.o
-_set_task_time_period      00008590   defined in Debug\scheduler.o section .text
+_set_task_time_period      00008614   defined in Debug\scheduler.o section .text
 _setup_gpio_ports          0000823b   defined in Debug\main.o section .text
 _setup_timer2              00008226   defined in Debug\main.o section .text
 _std                       00000004   defined in Debug\main.o section .bsct, initialized
-_strcmp                    000085e9   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libis0.sm8)strcmp0.o section .text
+_strcmp                    0000866d   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libis0.sm8)strcmp0.o section .text
                                       used in Debug\scheduler.o
-_strncpy                   000085fc   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libis0.sm8)strncp.o section .text
+_strncpy                   00008680   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libis0.sm8)strncp.o section .text
                                       used in Debug\scheduler.o
 _t2_millis                 00000000   defined in Debug\delay.o section .bsct, initialized
                                       used in Debug\main.o
 _task_list                 0000000a   defined in Debug\scheduler.o section .ubsct
-_tim_task                  000082b7   defined in Debug\main.o section .text
+_tim_task                  000082f0   defined in Debug\main.o section .text
 _tmr                       00000005   defined in Debug\main.o section .bsct, initialized
 _tmr2_val                  00008170   defined in Debug\delay.o section .text
-c_lcmp                     00008622   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lcmp.o section .text
+c_lcmp                     000086a6   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lcmp.o section .text
                                       used in Debug\delay.o
-c_lgadc                    00008642   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lgadc.o section .text
+c_lgadc                    000086c6   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lgadc.o section .text
                                       used in Debug\delay.o Debug\main.o
 c_lreg                     00000073   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lreg.o section .ubsct
                                       used in Debug\delay.o
@@ -472,13 +477,13 @@ c_lreg                     00000073   defined in (C:\Program Files (x86)\COSMIC\
                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)ltor.o
                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)rtol.o
                                               (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)utolx.o
-c_lsub                     00008652   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lsub.o section .text
+c_lsub                     000086d6   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)lsub.o section .text
                                       used in Debug\delay.o
-c_ltor                     0000866a   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)ltor.o section .text
+c_ltor                     000086ee   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)ltor.o section .text
                                       used in Debug\delay.o
-c_rtol                     0000867c   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)rtol.o section .text
+c_rtol                     00008700   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)rtol.o section .text
                                       used in Debug\delay.o
-c_uitolx                   0000868e   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)utolx.o section .text
+c_uitolx                   00008712   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)utolx.o section .text
                                       used in Debug\delay.o
 c_x                        00000077   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)xreg.o section .ubsct
                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
@@ -486,4 +491,4 @@ c_x                        00000077   defined in (C:\Program Files (x86)\COSMIC\
 c_y                        0000007a   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)yreg.o section .ubsct
                                       used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
                                               Debug\main.o
-f_NonHandledInterrupt      00008695   defined in Debug\stm8_interrupt_vector.o section .text
+f_NonHandledInterrupt      00008719   defined in Debug\stm8_interrupt_vector.o section .text

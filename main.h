@@ -44,6 +44,7 @@
 
 #define PWR_SW  (0x08) /* PC3 */
 #define PWR_LED (0x10) /* PC4 */
+#define RLY_LS  (0x20) /* PC5 */
 
 #define PA_NC   ~(RLY_N | RLY_L_R | RLY_L)
 #define PB_NC   (0x30) /* PB4, PB5 */
@@ -54,11 +55,16 @@
 #define STD_PWR_OFF  (0)
 #define STD_N_ON     (1)
 #define STD_L_R_ON   (2)
-#define STD_PWR_ON   (3)
-#define STD_PWR_OFF1 (4)
-#define STD_PWR_OFF2 (5)
+#define STD_SPK_ON   (3)
+#define STD_PWR_ON   (4)
+#define STD_PWR_OFF1 (5)
+#define STD_PWR_OFF2 (6)
+#define STD_PWR_OFF3 (7)
+#define STD_PWR_OFF4 (8)
 
-#define TMR_L_R     (10) /* 10 = 1000 msec. */
+#define TMR_L_R     (10) /* 10 = 1.0 msec. */
+#define TMR_SPK_ON  (21) /* 21 = 2.1 sec. */ 
+#define TMR_OFF     (7)  /*  7 = 0.7 sec. */
 
 // Function Prototypes
 void    initialise_system_clock(void);

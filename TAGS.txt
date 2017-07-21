@@ -4,6 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+ADC_CR1_SPSEL_MSK	main.h	34;"	macro
+CLK_ICKCR_HSIEN	main.h	32;"	macro
+CLK_ICKCR_HSIRDY	main.h	33;"	macro
+CLK_SWCR_SWBSY	main.h	35;"	macro
+CLK_SWCR_SWEN	main.h	36;"	macro
 Counter	scheduler.h	49;"	member	struct:_task_struct
 Delay	scheduler.h	48;"	member	struct:_task_struct
 ERR_EMPTY	scheduler.h	40;"	macro
@@ -16,23 +21,35 @@ NO_ERR	scheduler.h	38;"	macro
 NULL	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	9;"	macro
 Name	scheduler.h	46;"	member	struct:_task_struct
 NonHandledInterrupt	stm8_interrupt_vector.c	12;"	function	signature:(void)
-PA_NC	main.c	40;"	macro	file:
-PB_NC	main.c	41;"	macro	file:
-PC_NC	main.c	42;"	macro	file:
-PD_NC	main.c	43;"	macro	file:
-PWR_LED	main.c	38;"	macro	file:
-PWR_SW	main.c	37;"	macro	file:
+PA_NC	main.h	48;"	macro
+PB_NC	main.h	49;"	macro
+PC_NC	main.h	50;"	macro
+PD_NC	main.h	51;"	macro
+PWR_LED	main.h	46;"	macro
+PWR_SW	main.h	45;"	macro
 Period	scheduler.h	47;"	member	struct:_task_struct
-RLY_L	main.c	35;"	macro	file:
-RLY_L_R	main.c	34;"	macro	file:
-RLY_N	main.c	33;"	macro	file:
+RLY_L	main.h	43;"	macro
+RLY_L_R	main.h	42;"	macro
+RLY_N	main.h	41;"	macro
+STD_L_R_ON	main.h	56;"	macro
+STD_N_ON	main.h	55;"	macro
+STD_PWR_OFF	main.h	54;"	macro
+STD_PWR_OFF1	main.h	58;"	macro
+STD_PWR_OFF2	main.h	59;"	macro
+STD_PWR_ON	main.h	57;"	macro
 Status	scheduler.h	50;"	member	struct:_task_struct
 TASK_ENABLED	scheduler.h	36;"	macro
 TASK_READY	scheduler.h	35;"	macro
 TICKS_PER_SEC	scheduler.h	32;"	macro
-TIM2_UPD_OVF_IRQHandler	main.c	57;"	function	signature:(void)
+TIM2_CR1_CEN	main.h	38;"	macro
+TIM2_IER_UIE	main.h	37;"	macro
+TIM2_SR1_UIF	main.h	31;"	macro
+TIM2_UPD_OVF_IRQHandler	main.c	49;"	function	signature:(void)
+TIM2_UPD_OVF_IRQHandler	stm8_interrupt_vector.c	21;"	prototype	file:
+TMR_L_R	main.h	61;"	macro
 _DELAY_H	delay.h	24;"	macro
 _SCHEDULER_H	scheduler.h	24;"	macro
+_SPOPA_MAIN_H	main.h	24;"	macro
 _STDINT_H_	stdint.h	2;"	macro
 __MODS0__	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	11;"	macro
 __STDBOOL	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdbool.h	5;"	macro
@@ -40,7 +57,7 @@ __STRING__	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	6;"
 __bool_true_false_are_defined	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdbool.h	11;"	macro
 _stext	stm8_interrupt_vector.c	20;"	prototype	file:
 _task_struct	scheduler.h	43;"	struct
-_vectab	stm8_interrupt_vector.c	22;"	variable
+_vectab	stm8_interrupt_vector.c	23;"	variable
 add_task	scheduler.c	104;"	function	signature:(void (*task_ptr)(), char *Name, uint16_t delay, uint16_t period)
 add_task	scheduler.h	56;"	prototype	signature:(void (*task_ptr)(), char *Name, uint16_t delay, uint16_t period)
 bool	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdbool.h	7;"	macro
@@ -58,7 +75,8 @@ enable_interrupts	delay.h	28;"	macro
 enable_task	scheduler.c	138;"	function	signature:(char *Name)
 enable_task	scheduler.h	58;"	prototype	signature:(char *Name)
 false	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdbool.h	10;"	macro
-initialise_system_clock	main.c	70;"	function	signature:(void)
+initialise_system_clock	main.c	62;"	function	signature:(void)
+initialise_system_clock	main.h	64;"	prototype	signature:(void)
 int16_t	stdint.h	8;"	typedef
 int32_t	stdint.h	10;"	typedef
 int8_t	stdint.h	5;"	typedef
@@ -66,8 +84,9 @@ interrupt_handler	stm8_interrupt_vector.c	9;"	member	struct:interrupt_vector	fil
 interrupt_handler_t	stm8_interrupt_vector.c	5;"	typedef	file:
 interrupt_instruction	stm8_interrupt_vector.c	8;"	member	struct:interrupt_vector	file:
 interrupt_vector	stm8_interrupt_vector.c	7;"	struct	file:
+led_on	main.c	37;"	variable
 list_all_tasks	scheduler.h	60;"	prototype	signature:(bool rs232_udp)
-main	main.c	137;"	function	signature:(void)
+main	main.c	217;"	function	signature:(void)
 max_tasks	scheduler.c	28;"	variable
 memchr	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	28;"	prototype	signature:(void *s, char c, unsigned int n)
 memcmp	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	22;"	prototype	signature:(void *s1, void *s2, unsigned int n)
@@ -76,15 +95,22 @@ memmove	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	30;"	p
 memset	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	31;"	prototype	signature:(void *s, char c, unsigned int n)
 millis	delay.c	34;"	function	signature:(void)
 millis	delay.h	32;"	prototype	signature:(void)
+old_pwr_sw	main.c	34;"	variable
 pFunction	scheduler.h	45;"	member	struct:_task_struct
+pwr_sw	main.c	33;"	variable
+read_power_switch	main.c	136;"	function	signature:(void)
+read_power_switch	main.h	67;"	prototype	signature:(void)
 scheduler_init	scheduler.c	36;"	function	signature:(void)
 scheduler_init	scheduler.h	53;"	prototype	signature:(void)
 scheduler_isr	scheduler.c	48;"	function	signature:(void)
 scheduler_isr	scheduler.h	54;"	prototype	signature:(void)
 set_task_time_period	scheduler.c	197;"	function	signature:(uint16_t Period, char *Name)
 set_task_time_period	scheduler.h	57;"	prototype	signature:(uint16_t Period, char *Name)
-setup_gpio_ports	main.c	109;"	function	signature:(void)
-setup_timer2	main.c	94;"	function	signature:(void)
+setup_gpio_ports	main.c	105;"	function	signature:(void)
+setup_gpio_ports	main.h	66;"	prototype	signature:(void)
+setup_timer2	main.c	86;"	function	signature:(void)
+setup_timer2	main.h	65;"	prototype	signature:(void)
+std	main.c	35;"	variable
 strcat	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	14;"	prototype	signature:(char *s1, char *s2)
 strchr	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	15;"	prototype	signature:(char *s, char c)
 strcmp	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	23;"	prototype	signature:(char *s1, char *s2)
@@ -101,6 +127,9 @@ strstr	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	21;"	pr
 t2_millis	delay.c	26;"	variable
 task_list	scheduler.c	27;"	variable
 task_struct	scheduler.h	51;"	typedef	typeref:struct:_task_struct
+tim_task	main.c	152;"	function	signature:(void)
+tim_task	main.h	68;"	prototype	signature:(void)
+tmr	main.c	36;"	variable
 tmr2_val	delay.c	76;"	function	signature:(void)
 true	c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdbool.h	9;"	macro
 uint16_t	stdint.h	7;"	typedef

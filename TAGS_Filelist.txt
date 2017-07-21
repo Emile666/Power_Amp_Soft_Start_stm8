@@ -3,6 +3,7 @@ main.c
 scheduler.c
 stm8_interrupt_vector.c
 delay.h
+main.h
 scheduler.h
 stdint.h
 c:\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\iostm8s103.h
